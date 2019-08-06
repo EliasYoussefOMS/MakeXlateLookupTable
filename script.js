@@ -6,9 +6,17 @@ class lookupTableItem {
 
 	getLine() {
 		let line;
-		line = "/" + this.left + "/" + this.right.replace(/\/|,/gm, " ") + "/";
+		line = "/" + this.left + "/" + this.right.replace(/(\/)|(,)/gm, this.replacer).replace() + "/";
 		return line;
 	}
+
+	replacer(match, p1, p2, offset, string) {
+		if (p1) {
+			return " ";
+		} else if (p2) {
+			return "";
+		}
+	  }
 }
 
 var rows = document.querySelector(".ui-dialog-content.ui-widget-content#dialog3").getElementsByTagName("TBODY")[0].children;
