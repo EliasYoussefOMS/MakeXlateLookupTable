@@ -6,7 +6,7 @@ class lookupTableItem {
 
 	getLine() {
 		let line;
-		line = "/" + this.left + "/" + this.right.replace(/(\/)|(,)/gm, this.replacer).replace() + "/";
+		line = "/" + this.left + "/" + this.right.replace(/(\/)|(,)/gm, this.replacer) + "/";
 		return line;
 	}
 
