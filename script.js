@@ -6,17 +6,17 @@ class lookupTableItem {
 
 	getLine() {
 		let line;
-		line = "/" + this.left + "/" + this.right.replace(/(\/)|(,)/gm, this.replacer) + "/";
+		line = "/" + this.left + "/" + this.right.replace(/(\/)|(,)|(')/gm, this.replacer) + "/";
 		return line;
 	}
 
-	replacer(match, p1, p2, offset, string) {
+	replacer(match, p1, p2, p3) {
 		if (p1) {
 			return " ";
-		} else if (p2) {
+		} else if (p2||p3) {
 			return "";
 		}
-	  }
+	}
 }
 
 var rows = document.querySelector(".ui-dialog-content.ui-widget-content#dialog3").getElementsByTagName("TBODY")[0].children;
